@@ -1,0 +1,31 @@
+{
+    "name": "intermentality.github.io",
+    "version": "0.0.0",
+    "homepage": "https://intermentality.github.io",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "resize-toolbox-images": "node ./bin/resize-toolbox-images.mjs"
+    },
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-router-dom": "^6.27.0"
+    },
+    "devDependencies": {
+        "@monaco-editor/react": "^4.3.1",
+        "@types/react": "^17.0.33",
+        "@types/react-dom": "^17.0.10",
+        "@vitejs/plugin-react": "^1.0.7",
+        "autoprefixer": "^10.4.2",
+        "es-module-shims": "^1.4.5",
+        "monaco-editor": "0.32.1",
+        "postcss": "^8.4.5",
+        "sharp": "^0.33.5",
+        "tailwindcss": "^3.0.15",
+        "typescript": "^4.4.4",
+        "vite": "^5.4.10"
+    },
+    "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

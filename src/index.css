@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply m-0 bg-black text-white;
+}
+
+h1 {
+  @apply text-6xl font-extrabold mt-2 mb-2;
+}
+
+h2 {
+  @apply text-3xl font-extrabold mt-8 mb-2;
+}
+
+nav {
+  ul {
+    @apply list-none flex gap-4
+  }
+  a {
+    @apply flex items-center p-1
+  }
+
+  li:hover{
+    @apply bg-gray-500
+  }
+
+  @apply bg-gray-900 text-white flex justify-between items-center gap-8 p-3
+}
