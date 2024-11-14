@@ -1,6 +1,7 @@
 {
     "name": "intermentality.github.io",
     "version": "0.0.0",
+    "license": "MIT",
     "homepage": "https://intermentality.github.io",
     "scripts": {
         "dev": "vite",
