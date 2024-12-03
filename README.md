@@ -51,6 +51,13 @@ The background is based off of Shadertoy.
 - [NPM Module of Shadertoy](https://www.npmjs.com/package/shadertoy-react)
 
 
+# File Stucture
+## Pages
+This includes Home, Issues (Four Sections), and Summary pages.
+## Components
+This includes Link, Navbar, YouTube, and Paragraph elements.
+### Background
+This includes the Index and multiple functions in BS_SHADER folder to switch between backgrounds.
 
 # Instillation for this project.
 ## Local Computer
