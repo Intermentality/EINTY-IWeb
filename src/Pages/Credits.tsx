@@ -1,24 +1,15 @@
-import { Paragraph } from '../Components/Paragraph';
 import { LinkNewWindow } from '@/Components/Link';
 import viteLogo from '/vite.svg';
 import reactLogo from '@/assets/react.svg';
 
-export default function Summary(){
+export default function Credits(){
     return <div className="relative grid place-items-center">
         <article className="my-4 p-2 w-full max-w-sm md:max-w-2xl">
-            <h1 className='text-5xl italic underline underline-offset-4 place-content-center place-self-center'>Summary</h1>
+            <h1 className='text-5xl italic underline underline-offset-4 place-content-center place-self-center'>Credits</h1>
             <p className='place-content-center place-self-center font-semibold italic'>Website directory and tool credits!</p>
 
-            {/* Website Stucture */}
-            <div className='pl-20 pr-20 place-content-center place-self-center -my-10 p-10 w-full max-w-sm md:max-w-xl'>
-                <h2 className='text-3xl italic place-content-center place-self-center'>Website Structure</h2>
-                <Paragraph>
-                    This website was designed with... And then with... 
-                </Paragraph>
-            </div>
-
             {/* Controbutions */}
-            <div className='pl-20 pr-20 place-content-center place-self-center w-full max-w-sm md:max-w-xl'>
+            <div className='pl-20 pr-20 place-content-center place-self-center w-full max-w-sm md:max-w-xl -mt-4'>
                 <h2 className='text-3xl italic place-content-center place-self-center'>Website Contributions</h2>
                 <li>Asher - Summary of Webpage.</li>
                 <li>Johnathan - Four Sections.</li>
@@ -29,7 +20,7 @@ export default function Summary(){
             {/* Work Cited */}
 
             {/* Credits */}
-            <div className='pl-20 pr-20 place-content-center place-self-center w-full max-w-sm md:max-w-xl'>
+            <div className='pl-20 pr-20 place-content-center place-self-center w-full max-w-sm md:max-w-xl -mt-4'>
             <h2 className='text-3xl italic place-content-center place-self-center'>Credits</h2>
                 <LinkNewWindow href="https://www.shadertoy.com/view/4tdSWr">Background: By @Drift</LinkNewWindow>
                 <br/>

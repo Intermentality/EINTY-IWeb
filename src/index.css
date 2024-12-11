@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 body {
-  @apply m-0 bg-black text-white;
+  @apply m-0 text-lg bg-cyan-950 text-white;
 }
 
 h1 {

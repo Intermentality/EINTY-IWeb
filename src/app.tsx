@@ -5,7 +5,8 @@ import { Background } from "./Components/Background"
 
 import Home from "./Pages/Home"
 import Issues from "./Pages/Issues"
-import Summary from "./Pages/Summary"
+import Credits from "./Pages/Credits"
+import OnePager from "./Pages/OnePager"
 
 export const App: React.FC = () => {
     return <>
@@ -21,7 +22,8 @@ export const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/issues" element={<Issues/>}/>
-            <Route path="/summary" element={<Summary/>}/>
+            <Route path="/onepager" element={<OnePager />} />
+            <Route path="/credits" element={<Credits/>}/>
           </Routes>
         </div>
     </>

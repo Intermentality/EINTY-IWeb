@@ -31,7 +31,7 @@ export default function Issues(){
             {/* Navbar */}
             <div className="place-content-center place-self-center">
                 <h2 className="text-5xl italic underline underline-offset-4 place-content-center place-self-center mb-4">Issues</h2>
-                <ButtonGroup variant="outlined" aria-label="Basic button group">
+                <ButtonGroup size="large" variant="outlined" aria-label="Basic button group" color="warning">
                     <Button onClick={() => {changeText(1);}}>Key Stats</Button>
                     <Button onClick={() => {changeText(2);}}>Cases</Button>
                     <Button onClick={() => {changeText(3);}}>Analysis</Button>
