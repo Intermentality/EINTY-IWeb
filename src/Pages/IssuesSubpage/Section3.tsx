@@ -1,8 +1,8 @@
-import { Paragraph } from "../../components/Paragraph"
+import { Paragraph } from "../../Components/Paragraph"
 
-export default function Section1(){
+export default function Section3(){
     return <>
-        <h2>Section 3: Character Analysis and Connection to the Novel </h2>
+        <h2>Character Analysis and Connection to the Novel </h2>
 
         <Paragraph>
             In Everything I Never Told You, 

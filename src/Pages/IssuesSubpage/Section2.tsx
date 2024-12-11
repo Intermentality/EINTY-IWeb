@@ -1,8 +1,8 @@
-import { Paragraph } from "../../components/Paragraph"
+import { Paragraph } from "../../Components/Paragraph"
 
-export default function Section1(){
+export default function Section2(){
     return <>
-        <h2>Section 2: Case Studies </h2>
+        <h2>Case Studies </h2>
 
         <Paragraph>
             The impact of loneliness and the lack of belonging can be deeply felt in various communities, 

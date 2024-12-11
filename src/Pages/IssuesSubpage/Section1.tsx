@@ -1,8 +1,9 @@
-import { Paragraph } from "../../components/Paragraph"
+import { YouTube } from "@/Components/YouTube"
+import { Paragraph } from "../../Components/Paragraph"
 
 export default function Section1(){
     return <>
-        <h2>Section 1: Key Statistics on Loneliness and Belonging </h2>
+        <h2>Key Statistics on Loneliness and Belonging </h2>
 
         <Paragraph>
             Loneliness and the need for belonging are pressing issues that affect people on a global scale. 
@@ -20,5 +21,11 @@ export default function Section1(){
             
             These statistics highlight the critical need to address loneliness and foster a sense of belonging within our communities.  
         </Paragraph>
+
+        <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mb-2">
+            <YouTube url="https://www.youtube.com/embed/RsXLT2z3X8g?si=374o-PKV3NtCwtOX" />
+            <YouTube url="https://www.youtube.com/embed/1qegujBS18k?si=yQKeBKXcvM-Sf4aB" />
+        </div>
+        <YouTube url="https://www.youtube.com/embed/1qegujBS18k?si=yQKeBKXcvM-Sf4aB" />
     </>
 }

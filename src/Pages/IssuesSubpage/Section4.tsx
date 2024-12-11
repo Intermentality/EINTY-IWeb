@@ -1,8 +1,8 @@
-import { Paragraph } from "../../components/Paragraph"
+import { Paragraph } from "../../Components/Paragraph"
 
-export default function Section1(){
+export default function Section4(){
     return <>
-        <h2>Section 4: Historical Context and Societal Impact </h2>
+        <h2>Historical Context and Societal Impact </h2>
 
         <Paragraph>
             The concepts of loneliness and belonging have deep roots in historical and societal changes. 

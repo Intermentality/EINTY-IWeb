@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom"
 
-import Navbar from "./components/Navbar"
-import { Background } from "./components/background"
+import Navbar from "./Components/Navbar"
+import { Background } from "./Components/Background"
 
-import Home from "./pages/Home"
-import Issues from "./pages/Issues"
-import Summary from "./pages/Summary"
+import Home from "./Pages/Home"
+import Issues from "./Pages/Issues"
+import Summary from "./Pages/Summary"
 
 export const App: React.FC = () => {
     return <>

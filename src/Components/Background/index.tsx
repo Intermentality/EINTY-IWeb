@@ -1,5 +1,5 @@
-// import { Shader } from "react-shaders";
-// import code from "@/assets/background.glsl?raw";
+// import { Shader } from 'react-shaders'
+// import code from "@/assets/test.glsl?raw";
 
 export function Background(): JSX.Element {
     return <>

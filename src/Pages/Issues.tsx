@@ -32,10 +32,10 @@ export default function Issues(){
             <div className="place-content-center place-self-center">
                 <h2 className="text-5xl italic underline underline-offset-4 place-content-center place-self-center mb-4">Issues</h2>
                 <ButtonGroup variant="outlined" aria-label="Basic button group">
-                    <Button onClick={() => {changeText(1);}}>One</Button>
-                    <Button onClick={() => {changeText(2);}}>Two</Button>
-                    <Button onClick={() => {changeText(3);}}>Three</Button>
-                    <Button onClick={() => {changeText(4);}}>Four</Button>
+                    <Button onClick={() => {changeText(1);}}>Key Stats</Button>
+                    <Button onClick={() => {changeText(2);}}>Cases</Button>
+                    <Button onClick={() => {changeText(3);}}>Analysis</Button>
+                    <Button onClick={() => {changeText(4);}}>Historical</Button>
                 </ButtonGroup>
             </div>
 

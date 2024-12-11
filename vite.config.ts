@@ -11,10 +11,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src/'),
-      components: `${path.resolve(__dirname, "./src/components/")}`,
+      components: `${path.resolve(__dirname, "./src/Components/")}`,
       public: `${path.resolve(__dirname, "./public/")}`,
-      assets: `${path.resolve(__dirname, '.src/assets/')}`,
-      pages: path.resolve(__dirname, "./src/pages/")
+      assets: `${path.resolve(__dirname, './src/assets/')}`,
+      pages: path.resolve(__dirname, "./src/Pages/")
     },
   },
 })
