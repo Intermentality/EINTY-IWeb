@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom"
 
-import Navbar from "./Components/Navbar"
-import { Background } from "./Components/Background"
+import Navbar from "./components/Navbar"
+import { Background } from "./components/background"
 
-import Home from "./Pages/Home"
-import Issues from "./Pages/Issues"
-import Summary from "./Pages/Summary"
+import Home from "./pages/Home"
+import Issues from "./pages/Issues"
+import Summary from "./pages/Summary"
 
 export const App: React.FC = () => {
     return <>
+        <Background/>
 
         {/* Navbar */}
         <div className='z-1 relative'>
