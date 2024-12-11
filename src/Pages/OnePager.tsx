@@ -68,6 +68,19 @@ export default function OnePager(){
                 displaying the issue of loneliness in families across America and make 
                 connections to our novel in an engaging and informative way. 
             </Paragraph>
+
+
+            <h2>One Pager</h2>
+            <Paragraph>
+                This one-pager's purpose is to summarize our project and credit everyone's 
+                contributions to the project. 
+                
+                Johnathan researched the content used on the website including statistics, 
+                case studies, and character analysis. Daryl researched multimedia elements to be 
+                integrated into the website to engage the user. Kei designed the website in TypeScript 
+                to display our research and connections of loneliness to the novel. 
+                Asher wrote out the one-pager to summarize our prototype. 
+            </Paragraph>
         </article>
     </div>
 }

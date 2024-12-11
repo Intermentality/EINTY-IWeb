@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/enity/',
+  base: '/einty-iweb',
   plugins: [react()],
 
   assetsInclude: ["**/*.GLSL", "assets/*"],
