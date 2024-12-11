@@ -1,5 +1,8 @@
 import { Route, Routes } from "react-router-dom"
+
 import Navbar from "./Components/Navbar"
+import { Background } from "./Components/Background"
+
 import Home from "./Pages/Home"
 import Issues from "./Pages/Issues"
 import Summary from "./Pages/Summary"

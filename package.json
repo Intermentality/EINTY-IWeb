@@ -10,10 +10,14 @@
         "resize-toolbox-images": "node ./bin/resize-toolbox-images.mjs"
     },
     "dependencies": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
+        "@zendeskgarden/react-buttons": "^9.2.0",
+        "@zendeskgarden/react-grid": "^9.2.0",
+        "@zendeskgarden/react-theming": "^9.2.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
         "react-router-dom": "^6.27.0",
-        "shadertoy-react": "^1.1.2"
+        "shadertoy-react": "^1.1.2",
+        "styled-components": "^6.1.13"
     },
     "devDependencies": {
         "@monaco-editor/react": "^4.3.1",
