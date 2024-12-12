@@ -2,6 +2,7 @@
     "name": "einty-iweb",
     "private": true,
     "type": "module",
+    "homepage": "https://intermentality.github.io/EINTY-IWeb/",
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
