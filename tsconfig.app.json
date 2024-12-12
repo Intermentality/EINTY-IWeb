@@ -25,7 +25,7 @@
       /* Path */
       "baseUrl": ".",
       "paths": {
-        "@/*": ["./src/*", "./dist/*", ""],
+        "@/*": ["./src/*", "./dist/einty-iweb/", ""],
         "assets/*": ["src/assets/*"],
         "pages/*": ["src/Pages/*"],
         "components/*": ["src/Components/*"],
