@@ -23,9 +23,9 @@ export default function Section1(){
         </Paragraph>
 
         <div className="grid gap-2 grid-cols-1 md:grid-cols-2 mb-2">
-            <YouTube url="https://www.youtube.com/embed/RsXLT2z3X8g?si=374o-PKV3NtCwtOX" />
-            <YouTube url="https://www.youtube.com/embed/1qegujBS18k?si=yQKeBKXcvM-Sf4aB" />
+            <YouTube url="https://www.youtube.com/embed/zQEC9diyl-Y?si=hdNAs17Ia5vuKmD6" />
+            <YouTube url="https://www.youtube.com/embed/n3Xv_g3g-mA?si=-WCxXj1yuqcEWgDC" />
         </div>
-        <YouTube url="https://www.youtube.com/embed/1qegujBS18k?si=yQKeBKXcvM-Sf4aB" />
+        <YouTube url="https://www.youtube.com/embed/AcXf5rJ13x8?si=QqvUACnyxjwHghaN" />
     </>
 }
