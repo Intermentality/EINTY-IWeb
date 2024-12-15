@@ -24,14 +24,14 @@ export default function Credits(){
                 <h2 className='text-3xl italic place-content-center place-self-center'>Website Contributions</h2>
                 <li>Asher - Summary of Webpage.</li>
                 <li>Johnathan - Four Sections.</li>
-                <li>Daryl - Providing Videos.</li>
-                <li>Keijiro - Coding.</li>
+                <li>Daryl - Providing Multimedia.</li>
+                <li>Keijiro - Home & Coding.</li>
             </div>
 
             {/* Credits */}
             <div className='pl-20 pr-20 place-content-center place-self-center w-full max-w-sm md:max-w-xl -mt-4'>
             <h2 className='text-3xl italic place-content-center place-self-center'>Credits</h2>
-                <LinkNewWindow href="https://www.shadertoy.com/view/4tdSWr">Background: By @Drift</LinkNewWindow>
+                <LinkNewWindow href="https://www.shadertoy.com/view/MsB3WR">Background: By @reinder</LinkNewWindow>
                 <br/>
                 <LinkNewWindow href="https://github.com/Intermentality/EINTY-IWeb">Github Project Files</LinkNewWindow>
             </div>
