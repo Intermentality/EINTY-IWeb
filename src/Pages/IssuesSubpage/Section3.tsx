@@ -1,8 +1,21 @@
 import { Paragraph } from "../../Components/Paragraph"
 
+import 'react-pdf/dist/Page/TextLayer.css';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import { Document, Page, pdfjs } from 'react-pdf'
+
+import PDF1 from '@/assets/PDF1.pdf'
+import PDF2 from '@/assets/PDF2.pdf'
+
+
 export default function Section3(){
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+        'pdfjs-dist/build/pdf.worker.min.mjs',
+        import.meta.url,
+    ).toString();
+
     return <>
-        <h2>Character Analysis and Connection to the Novel </h2>
+        <h2>Character Analysis and Connection to Everything I Never Told You. </h2>
 
         <Paragraph>
             In Everything I Never Told You, 
@@ -39,5 +52,24 @@ export default function Section3(){
             loneliness and the critical importance of encouraging genuine connections and 
             support systems in our communities. 
         </Paragraph>
+
+        <div className="mt-4 grid gap-2 grid-cols-1 md:grid-cols-2 mb-2">
+            <Document file={PDF1}>
+                <Page 
+                pageIndex={1} 
+                pageNumber={1}
+                width={325}
+                canvasBackground="transparent"
+                />
+            </Document>
+            <Document file={PDF2}>
+                <Page 
+                pageIndex={1} 
+                pageNumber={1}
+                width={325}
+                canvasBackground="transparent"
+                />
+            </Document>
+        </div>
     </>
 }

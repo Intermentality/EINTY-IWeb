@@ -17,8 +17,6 @@ export default function Credits(){
                 <li>Keijiro - Coding.</li>
             </div>
 
-            {/* Work Cited */}
-
             {/* Credits */}
             <div className='pl-20 pr-20 place-content-center place-self-center w-full max-w-sm md:max-w-xl -mt-4'>
             <h2 className='text-3xl italic place-content-center place-self-center'>Credits</h2>
@@ -38,6 +36,9 @@ export default function Credits(){
                     <img src={reactLogo} className="logo react" alt="React logo" />
                 </a>
             </div>
+
+            {/* Work Cited */}
+            <h2 className='text-3xl italic place-content-center place-self-center -mt-5'>Work Cited</h2>
         </article>
     </div>
 }

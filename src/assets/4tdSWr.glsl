@@ -108,5 +108,5 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
     
     vec3 result = mix(skycolour, clamp(skytint * skycolour + cloudcolour, 0.0, 1.0), clamp(f + c, 0.0, 1.0));
     
-	fragColor = vec4( result * 0.25, 1.0 );
+	fragColor = vec4( result, 1.0 );
 }

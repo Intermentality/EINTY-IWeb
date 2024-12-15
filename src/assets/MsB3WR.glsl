@@ -11,7 +11,7 @@
 
 #define time (iTime+285.)
 
-// noise functions by inigo quilez 
+// Noise functions by inigo quilez 
 
 float noise( const in vec2 x ) {
     vec2 p = floor(x);
@@ -118,7 +118,7 @@ vec3 raymarchClouds( const in vec3 ro, const in vec3 rd, const in vec3 bgc, cons
 
 // terrain functions
 float terrainMap( const in vec3 p ) {
-	return (textureLod( iChannel1, (-p.zx*m2)*0.000046, 0. ).x*600.) * smoothstep( 820., 1000., length(p.xz) ) - 2. + noise(p.xz*0.1)*15.;
+	return (textureLod( iChannel1, (-p.zx*m2)*0.000046, 0. ).x*600.) * smoothstep( 820., 1000., length(p.xz) ) - 2. + noise(p.xz*0.5)*15.;
 }
 
 vec3 raymarchTerrain( const in vec3 ro, const in vec3 rd, const in vec3 bgc, const in float startdist, inout float dist ) {
@@ -205,9 +205,6 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
 	// camera parameters
 	vec3 ro = vec3(0.0, 0.5, 0.0);
 	vec3 ta = vec3(0.0, 0.45,1.0);
-	if (iMouse.z>=1.) {
-		ta.xz *= rot( (iMouse.x/iResolution.x-.5)*7. );
-	}
 		
 	ta.xz *= rot( mod(iTime * 0.05, 6.2831852) );
     
@@ -260,9 +257,9 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
 	col = pow( col, vec3(0.7) );
 	
 	// contrast, saturation and vignetting	
-	col = col*col*(2.0-2.0*col);
+	col = col*col*(4.0-1.0*col);
     col = mix( col, vec3(dot(col,vec3(0.33))), -0.5 );
- 	col *= 0.25+ 0.75*pow( 16.0*q.x*q.y*(1.0-q.x)*(1.0-q.y), 0.05 );
+ 	col *= 0.25 + 0.75*pow( 16.0*q.x*q.y*(1.0-q.x)*(1.0-q.y), 0.1 );
 	
-    fragColor = vec4( col, 1.0 );
+    fragColor = vec4( col * 0.5, 1.0 );
 }
