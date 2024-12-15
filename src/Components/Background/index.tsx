@@ -4,8 +4,8 @@ import { shaderMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 
 import iChannel0 from "@/assets/iChannel0.png"
-import iChannel1 from "@/assets/iChannel1.png"
-import iChannel2 from "@/assets/iChannel2.png"
+import iChannel1 from "@/assets/iChannel1.jpg"
+import iChannel2 from "@/assets/iChannel2.jpg"
 
 // Custom shader material
 const BackgroundMaterial = shaderMaterial(
@@ -46,9 +46,7 @@ const BackgroundMaterial = shaderMaterial(
 
     #define time (iTime+285.)
 
-    // Noise functions by inigo quilez 
-
-    float noise( const in vec2 x ) {
+   float noise( const in vec2 x ) {
         vec2 p = floor(x);
         vec2 f = fract(x);
       f = f*f*(3.0-2.0*f);
@@ -56,6 +54,7 @@ const BackgroundMaterial = shaderMaterial(
       vec2 uv = (p.xy) + f.xy;
       return textureLod( iChannel0, (uv+ 0.5)/256.0, 0.0 ).x;
     }
+
 
     mat2 rot(const in float a) {
       return mat2(cos(a),sin(a),-sin(a),cos(a));	
@@ -66,11 +65,6 @@ const BackgroundMaterial = shaderMaterial(
     const mat3 m3 = mat3( 0.00,  0.80,  0.60,
                         -0.80,  0.36, -0.48,
                         -0.60, -0.48,  0.64 );
-
-    float fbm( in vec3 p ) {
-        float f = 0.0;
-        return f/0.9375;
-    }
 
     float hash( in float n ) {
         return fract(sin(n)*43758.5453);
@@ -105,55 +99,9 @@ const BackgroundMaterial = shaderMaterial(
       return col;
     }
 
-    // coulds functions by inigo quilez
-
-    #define CLOUDSCALE (500./(64.*0.03))
-
-    float cloudMap( const in vec3 p, const in float ani ) {
-      vec3 r = p/CLOUDSCALE;
-
-      float den = -1.8+cos(r.y*5.-4.3);
-        
-      float f;
-      vec3 q = 2.5*r*vec3(0.75,1.0,0.75)  + vec3(1.0,2.0,1.0)*ani*0.15;
-      
-      return 0.065*clamp( den + 4.4*f, 0.0, 1.0 );
-    }
-
-    vec3 raymarchClouds( const in vec3 ro, const in vec3 rd, const in vec3 bgc, const in vec3 fgc, const in float startdist, const in float maxdist, const in float ani ) {
-        // dithering	
-      float t = startdist+CLOUDSCALE*0.02*hash(rd.x+35.6987221*rd.y+time);//0.1*texture( iChannel0, fragCoord.xy/iChannelResolution[0].x ).x;
-      
-        // raymarch	
-      vec4 sum = vec4( 0.0 );
-      for( int i=0; i<64; i++ ) {
-        if( sum.a > 0.99 || t > maxdist ) continue;
-        
-        vec3 pos = ro + t*rd;
-        float a = cloudMap( pos, ani );
-
-            // lighting	
-        float dif = clamp(0.1 + 0.8*(a - cloudMap( pos + lig*0.15*CLOUDSCALE, ani )), 0., 0.5);
-        vec4 col = vec4( (1.+dif)*fgc, a );
-        // fog		
-      //	col.xyz = mix( col.xyz, fgc, 1.0-exp(-0.0000005*t*t) );
-        
-        col.rgb *= col.a;
-        sum = sum + col*(1.0 - sum.a);	
-
-            // advance ray with LOD
-        t += (0.03*CLOUDSCALE)+t*0.012;
-      }
-
-        // blend with background	
-      sum.xyz = mix( bgc, sum.xyz/(sum.w+0.0001), sum.w );
-      
-      return clamp( sum.xyz, 0.0, 1.0 );
-    }
-
     // terrain functions
     float terrainMap( const in vec3 p ) {
-      return (textureLod( iChannel1, (-p.zx*m2)*0.000046, 0.).x*600.) * smoothstep( 620., 1000., length(p.xz) ) - 5. + noise(p.xz*0.15)*15.;
+      return (textureLod( iChannel1, (-p.zx*m2)*0.000046, 0. ).x*600.) * smoothstep( 820., 1000., length(p.xz) ) - 2. + noise(p.xz*0.1)*20.;
     }
 
     vec3 raymarchTerrain( const in vec3 ro, const in vec3 rd, const in vec3 bgc, const in float startdist, inout float dist ) {
@@ -200,13 +148,13 @@ const BackgroundMaterial = shaderMaterial(
         col = vec3(0.2) + 0.7*texture( iChannel2, pos.xz * 0.01 ).xyz * 
               vec3(1.,.9,0.6);
         
-        float veg = 0.3*fbm(pos*0.2)+normal.y;
+        float veg = 0.3+normal.y;
               
         if( veg > 0.75 ) {
-          col = vec3( 0.45, 0.6, 0.3 )*(0.5+0.5*fbm(pos*0.5))*0.6;
+          col = vec3( 0.45, 0.6, 0.3 )*(0.5+0.5)*0.6;
         } else 
         if( veg > 0.66 ) {
-          col = col*0.6+vec3( 0.4, 0.5, 0.3 )*(0.5+0.5*fbm(pos*0.25))*0.3;
+          col = col*0.6+vec3( 0.4, 0.5, 0.3 )*(0.5+0.5)*0.3;
         }
         col *= vec3(0.5, 0.52, 0.65)*vec3(1.,.9,0.8);
         
@@ -229,7 +177,7 @@ const BackgroundMaterial = shaderMaterial(
     float waterMap( vec2 pos ) {
       vec2 posm = pos * m2;
       
-      return abs( fbm( vec3( 8.*posm, time ))-0.5 )* 0.1;
+      return abs(-0.5 )* 0.1;
     }
 
     void main() {
@@ -277,7 +225,6 @@ const BackgroundMaterial = shaderMaterial(
       }
 
       col = raymarchTerrain( ro, rd, col, reflected?(800.-refldist):800., maxdist );
-        col = raymarchClouds( ro, rd, col, bgc, reflected?max(0.,min(150.,(150.-refldist))):150., maxdist, time*0.05 );
       
       if( reflected ) {
         col = mix( col.xyz, bgc, 1.0-exp(-0.0000005*refldist*refldist) );
@@ -289,14 +236,14 @@ const BackgroundMaterial = shaderMaterial(
             * (1.-fresnel)*0.125;
       }
       
-      col = pow( col, vec3(0.7) );
+      col = pow( col, vec3(1.0) );
       
       // contrast, saturation and vignetting	
-      col = col*col*(4.0-1.0*col);
+      col = col*col*(3.0-2.0*col);
         col = mix( col, vec3(dot(col,vec3(0.33))), -0.5 );
       col *= 0.25 + 0.75*pow( 16.0*q.x*q.y*(1.0-q.x)*(1.0-q.y), 0.1 );
       
-        gl_FragColor = vec4( col * 0.15, 1.0 );
+        gl_FragColor = vec4( col * 0.25, 1.0 );
     }
   `
 )
